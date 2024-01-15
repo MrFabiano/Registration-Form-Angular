@@ -1,0 +1,22 @@
+<form>
+    <img src="assets/client.png">
+    <input type="text" placeholder="Name" class="form-control">
+    <input type="number" placeholder="Age" class="form-control">
+    <input type="text" placeholder="City" class="form-control">
+
+    <input type="button" value="Create"  *ngIf="btnCreate" class="btn btn-primary">
+    <input type="button" value="Update"  *ngIf="!btnCreate" class="btn btn-warning">
+    <input type="button" value="Delete"  *ngIf="!btnCreate" class="btn btn-danger">
+    <input type="button" value="Cancel"  *ngIf="!btnCreate" class="btn btn-secondary">
+</form>
+
+<table class="table">
+    <thead>
+        <th>#</th>
+        <th>Create</th>
+        <th>Update</th>
+        <th>Delete</th>
+        <th>Cancel</th>
+    </thead>
+    <tbody></tbody>
+</table>
