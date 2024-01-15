@@ -1,22 +1,35 @@
 <form>
     <img src="assets/client.png">
-    <input type="text" placeholder="Name" class="form-control">
-    <input type="number" placeholder="Age" class="form-control">
-    <input type="text" placeholder="City" class="form-control">
+    <input type="text" placeholder="Name" class="form-control"  name="name" [(ngModel)]="client.name">
+    <input type="number" placeholder="Age" class="form-control" name="age" [(ngModel)]="client.age">
+    <input type="text" placeholder="City" class="form-control"  name="city" [(ngModel)]="client.city">
 
-    <input type="button" value="Create"  *ngIf="btnCreate" class="btn btn-primary">
+  
+
+    <input type="button" value="Create" *ngIf="btnCreate" class="btn btn-primary" (click)="create()">
     <input type="button" value="Update"  *ngIf="!btnCreate" class="btn btn-warning">
     <input type="button" value="Delete"  *ngIf="!btnCreate" class="btn btn-danger">
     <input type="button" value="Cancel"  *ngIf="!btnCreate" class="btn btn-secondary">
 </form>
 
-<table class="table">
+
+<table class="table" *ngIf="table">
     <thead>
+        <tr>
         <th>#</th>
-        <th>Create</th>
-        <th>Update</th>
-        <th>Delete</th>
-        <th>Cancel</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Selection</th>
+    </tr>
     </thead>
-    <tbody></tbody>
+    <tbody>
+       <tr *ngFor="let c of clients; index as i">
+        <td>{{i+1}}</td>
+        <td>{{ c.name }}</td>
+        <td>{{ c.age }}</td>
+        <td>{{ c.city }}</td>
+        <td><button class="btn btn-success" (click)="selectionClient(i)">Selection</button></td>
+       </tr>
+    </tbody>
 </table>
