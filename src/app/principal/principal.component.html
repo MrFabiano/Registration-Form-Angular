@@ -7,9 +7,9 @@
   
 
     <input type="button" value="Create" *ngIf="btnCreate" class="btn btn-primary" (click)="create()">
-    <input type="button" value="Update"  *ngIf="!btnCreate" class="btn btn-warning">
-    <input type="button" value="Delete"  *ngIf="!btnCreate" class="btn btn-danger">
-    <input type="button" value="Cancel"  *ngIf="!btnCreate" class="btn btn-secondary">
+    <input type="button" value="Update"  *ngIf="!btnCreate" class="btn btn-warning" (click)="update()">
+    <input type="button" value="Delete"  *ngIf="!btnCreate" class="btn btn-danger" (click)="deleteForm()">
+    <input type="button" value="Cancel"  *ngIf="!btnCreate" class="btn btn-secondary" (click)="cancelForm()">
 </form>
 
 

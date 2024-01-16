@@ -31,6 +31,16 @@ export class ClientService {
 
   }
 
+  update(obj: Client): Observable<Client>{
+    const url = `${AppConstants.baseUrl}/client`
+    return this.httpClient.put<Client>(url, obj);
+  }
+
+  deleteForm(id: number): Observable<void> {
+    const url = `${AppConstants.baseUrl}/client`
+    return this.httpClient.delete<void>(url + '/' + id);
+  }
+
 }
 
 
